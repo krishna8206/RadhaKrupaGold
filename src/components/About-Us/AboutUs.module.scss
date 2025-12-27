@@ -1,0 +1,115 @@
+.about {
+  width: 100%;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ================= Hero Section ================= */
+.hero {
+  position: relative;
+  background-color: #561211;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px 6%;
+  //min-height: 70vh;
+
+  @media (max-width: 1024px) {
+    padding: 120px 5%;
+    min-height: auto;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 100px 20px 60px;
+    text-align: center;
+    gap: 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 80px 16px 50px;
+    gap: 0;
+  }
+}
+
+.heroContent {
+  z-index: 2;
+  max-width: 600px;
+
+  h1 {
+    color: #D4AF37;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+  }
+}
+
+.heroImage {
+  flex-shrink: 0;
+  width: 460px;
+
+  @media (max-width: 1024px) {
+    width: 360px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  @media (max-width: 480px) {
+    height: 320px;
+  }
+}
+
+/* ================= Content Section ================= */
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 90px 20px;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 50px 16px;
+  }
+
+  h2 {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 18px;
+
+    @media (max-width: 480px) {
+      font-size: 15px;
+    }
+  }
+}
+
+/* ================= CTA ================= */
+.cta {
+  margin-top: 24px;
+  background: transparent;
+  border: none;
+  color: #c9a24d;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+}

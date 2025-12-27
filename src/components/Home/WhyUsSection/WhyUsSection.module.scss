@@ -1,0 +1,89 @@
+.mainContainer {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.header, .footer {
+  h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #000;
+
+    // Scale heading down for mobile
+    @media (max-width: 480px) {
+      font-size: 28px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    color: #333;
+    font-weight: 400;
+  }
+}
+
+.header {
+  margin-bottom: 60px;
+}
+
+.footer {
+  margin-top: 80px;
+}
+
+.featuresGrid {
+  display: grid;
+  // Desktop: 4 columns
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  // Tablet View: 2 columns
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 20px;
+  }
+
+  // Mobile View: 1 column
+  @media (max-width: 480px) {
+    gap: 40px;
+  }
+}
+
+.featureItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  .iconWrapper {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @media (max-width: 480px) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.4;
+    max-width: 200px; // Keeps text from stretching too wide
+  }
+}

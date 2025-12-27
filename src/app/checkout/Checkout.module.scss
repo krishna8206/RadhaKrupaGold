@@ -1,0 +1,230 @@
+.checkoutPage {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  font-family: "Playfair Display", serif;
+  color: #111;
+
+  h1 {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    display: flex;
+    gap: 2rem;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+  }
+
+  .formSection {
+    flex: 2;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.06);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    input, select {
+      padding: .8rem 1rem;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      font-size: .95rem;
+    }
+
+    .row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+
+      input, select {
+        flex: 1;
+        min-width: 120px;
+        max-height: 50px;
+      }
+    }
+
+    .checkbox {
+      margin-top: 1rem;
+      input {
+        margin-right: .5rem;
+      }
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      margin-bottom: .5rem;
+    }
+
+    // Tablet responsiveness
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+
+        input, select {
+          width: 100%;
+        }
+      }
+    }
+
+    // Mobile responsiveness
+    @media (max-width: 480px) {
+      input, select {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .summarySection {
+    background: #fdf6e3;
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-weight: 600;
+    color: #111;
+    max-height: fit-content;
+
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding: .5rem 0;
+      border-bottom: 1px solid #e5e0d6;
+      font-weight: 500;
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    .payBtn {
+      margin-top: 1.5rem;
+      padding: .9rem;
+      background: linear-gradient(135deg, #d4af37, #b89b5e);
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #111;
+      font-size: 1rem;
+      transition: all .2s ease;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+
+    .paymentInfo {
+      font-size: .85rem;
+      color: #555;
+      margin-top: .8rem;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+}
+
+.billingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  input, select {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    select, input {
+      flex: 1;
+      min-width: 120px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      input, select {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    input, select {
+      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  min-height: 90px;
+
+  label {
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+
+  input,
+  select {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 0.95rem;
+  }
+
+  .error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    line-height: 1.2;
+  }
+}
+.row {
+  align-items: flex-start;
+}
+

@@ -1,0 +1,136 @@
+// Hero.module.scss
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}
+
+// --- LEFT SIDE (Hero Section) ---
+.heroSection {
+  position: relative;
+  flex: 1.2;
+  display: flex;
+  align-items: center;
+  padding: 0 5% 80px 10%;
+  background-color: #FBEECF;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 60px 10%;
+  }
+
+  .contentBox {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+    // Removed transform and transition - text is now static
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #1a1a1a;
+
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #444;
+      margin-bottom: 2rem;
+    }
+
+    .viewBtn {
+      display: inline-block;
+      background-color: #561211;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: maroon; // Simple color change for the button only
+      }
+    }
+  }
+
+  // Removed &:hover block for the section entirely
+}
+
+// --- RIGHT SIDE (Product List) ---
+.productList {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  background-color: #fff;
+  border-left: 1px solid #eee;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #eee;
+    padding: 40px 10%;
+  }
+
+  .productItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    padding-top: 0;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .info {
+      h3 {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+      }
+      p {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .cartIcon {
+        width: 35px;
+        height: 35px;
+        background: #561211;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+      }
+    }
+
+    .prodImg {
+      width: 90px;
+      height: auto;
+      object-fit: contain;
+
+      @media (max-width: 768px) {
+        width: 70px;
+      }
+    }
+  }
+}

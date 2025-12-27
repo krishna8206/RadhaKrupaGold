@@ -1,0 +1,97 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 48px 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 620px;
+}
+
+.title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Highlighted text */
+.highlight {
+  color: #c89b3c; // gold color
+  font-weight: 500;
+}
+
+/* Normal link */
+.link {
+  color: #c89b3c;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    color: #a67c2c;
+  }
+}
+
+/* Email link */
+.email {
+  color: #c89b3c;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .wrapper {
+    padding: 32px 12px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 28px;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+  }
+
+  .text {
+    font-size: 13px;
+  }
+}

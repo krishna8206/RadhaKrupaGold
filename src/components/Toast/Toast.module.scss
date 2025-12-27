@@ -1,0 +1,59 @@
+.toast {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10000;
+
+  background: #ffffff; // White Background
+  min-width: 320px;
+  max-width: 400px;
+  border-radius: 8px;
+  overflow: hidden; // Clips the progress bar at the bottom
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  border: 1px solid #f0f0f0;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem;
+  gap: 1rem;
+
+  .iconWrapper {
+    color: #22c55e; // Success Green
+    display: flex;
+    flex-shrink: 0;
+  }
+
+  .message {
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    flex: 1;
+  }
+
+  .closeBtn {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    padding: 4px;
+    &:hover { color: #333; }
+  }
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: #b89b5e; // Your brand gold color
+}
+
+@media (max-width: 480px) {
+  .toast {
+    right: 1rem;
+    left: 1rem;
+    min-width: auto;
+  }
+}

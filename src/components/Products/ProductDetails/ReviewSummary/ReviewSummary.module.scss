@@ -1,0 +1,281 @@
+.reviewContainer {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  border-top: 1px solid #d4a76a;
+  border-bottom: 1px solid #d4a76a;
+
+  .mainHeading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #000;
+  }
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+
+  .averageSection {
+    border-right: 2px solid #d4a76a;
+    padding-right: 20px;
+    text-align: center;
+
+    .starsRow {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      font-size: 24px;
+      color: #e0e0e0;
+    }
+
+    .scoreText { font-size: 1.2rem; margin: 10px 0 5px; font-weight: 500; }
+    .basedOn { font-size: 0.9rem; color: #000; }
+    .easyReviews { font-size: 0.85rem; color: #d4a76a; text-decoration: underline; }
+  }
+
+  .barsSection {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .barRow {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      .starIcons {
+        display: flex;
+        width: 100px;
+        .filledStar { color: #d4af37; }
+        .fadedStar { color: #eeeeee; }
+      }
+
+      .track {
+        flex: 1;
+        height: 12px;
+        background: #f0f0f0;
+        border-radius: 2px;
+        overflow: hidden;
+        .filler { height: 100%; background: #d4af37; transition: width 0.3s ease; }
+      }
+      .count { width: 20px; font-size: 0.9rem; }
+    }
+  }
+
+  .actionSection {
+    border-left: 2px solid #d4a76a;
+    padding-left: 20px;
+    display: flex;
+    justify-content: center;
+
+    .toggleBtn {
+      background-color: #d4af37;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      min-width: 160px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #561211;
+        color: #d4af37;
+      }
+    }
+  }
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #d4a76a;
+  margin: 40px 0;
+  width: 100%;
+}
+
+.formContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+
+  .formTitle {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+  }
+}
+
+.ratingSection {
+  margin-bottom: 35px;
+  h4 { margin-bottom: 20px; font-weight: 700; font-size: 1.1rem; }
+
+  .ratingRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 15px;
+
+    span {
+      width: 150px;
+      text-align: right;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .interactiveStars {
+      display: flex;
+      gap: 8px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      .filledStar { color: #d4af37; }
+      .fadedStar { color: #e0e0e0; }
+      svg { transition: transform 0.1s ease; &:hover { transform: scale(1.2); } }
+    }
+  }
+}
+
+.inputGroup {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label { font-weight: 700; margin-bottom: 12px; font-size: 1rem; }
+
+  input, textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    &:focus { border-color: #d4af37; outline: none; }
+  }
+}
+
+.formActions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+
+  button {
+    padding: 12px 35px;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    min-width: 150px;
+  }
+
+  .cancelFormBtn {
+    background: white;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    &:hover { background: #561211; color: #d4af37; border-color: #561211; }
+  }
+
+  .submitBtn {
+    background: #d4af37;
+    border: 1px solid #d4af37;
+    color: white;
+    &:hover { background: #561211; border-color: #561211; color: #d4af37; }
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .summaryGrid {
+    grid-template-columns: 1fr 1fr;
+    .actionSection { grid-column: span 2; border-left: none; border-top: 1px solid #eee; padding-top: 20px; }
+  }
+}
+
+@media (max-width: 600px) {
+  .summaryGrid { grid-template-columns: 1fr; .averageSection { border-right: none; border-bottom: 1px solid #eee; padding-bottom: 20px; } }
+  .ratingRow { flex-direction: column; gap: 10px; span { text-align: center; width: auto; } }
+  .formActions { flex-direction: column; button { width: 100%; } }
+}
+.inputGroup {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  label { font-weight: 700; margin-bottom: 12px; font-size: 1rem; }
+
+  .errorText {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 10px;
+  }
+
+  .previewsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .previewContainer {
+    position: relative;
+    width: 100px; // Smaller width to fit multiple side-by-side
+    height: 80px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+
+    .previewImage {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .removeBtn {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #777;
+      color: white;
+      border: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 0.7rem;
+      z-index: 10;
+
+      &:hover {
+        background: #561211;
+      }
+    }
+  }
+
+  .uploadBox {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    &:hover { background: #f9f9f9; }
+  }
+}

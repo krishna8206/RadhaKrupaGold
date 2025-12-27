@@ -1,0 +1,124 @@
+.container {
+  padding: 5rem 6rem;
+  background: #fff;
+}
+
+/* ======================
+   DESKTOP / TABLET
+====================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // 👈 centers image
+  justify-content: flex-start;
+
+  h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #222;
+  }
+}
+
+/* ======================
+   MOBILE SLIDER
+====================== */
+.mobileSlider {
+  display: none;
+  overflow: hidden;
+}
+
+.sliderTrack {
+  display: flex;
+  transition: transform 0.6s ease-in-out; // 👈 animation
+  width: 100%;
+}
+.noTransition {
+  transition: none !important;
+}
+.slide {
+  min-width: 100%;
+  text-align: center;
+  padding: 0 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; // 👈 centers image
+
+  h3 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin: 1rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* IMAGE CENTER FIX */
+.icon {
+  margin-bottom: 1rem;
+}
+
+/* PAGINATION */
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+
+  span {
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+.count {
+  font-weight: 600;
+}
+
+/* ======================
+   TABLET
+====================== */
+@media (max-width: 1024px) {
+  .container {
+    padding: 4rem 3rem;
+  }
+
+  .grid {
+    gap: 2.5rem;
+  }
+}
+
+/* ======================
+   MOBILE
+====================== */
+@media (max-width: 768px) {
+  .grid {
+    display: none;
+  }
+
+  .mobileSlider {
+    display: block;
+  }
+
+  .container {
+    padding: 3rem 1.5rem;
+  }
+}

@@ -1,0 +1,299 @@
+/* ================= ROOT ================= */
+:root {
+  --primary-bg: #561211;
+  --gold: #d4af37;
+}
+
+/* ================= TOP HEADER (SCROLLS AWAY) ================= */
+.topHeader {
+  width: 100%;
+  background-color: var(--primary-bg);
+  color: var(--gold);
+}
+
+/* ================= TOP BAR ================= */
+.topBar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ffffff;
+}
+
+/* ================= ICON GROUPS ================= */
+.leftIcons,
+.rightIcons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+/* ================= LOGO ================= */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.logo span {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #d4af37;
+}
+
+/* ================= BUTTONS & ICONS ================= */
+.iconBtn,
+.menuToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #d4af37;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.menuToggle {
+  display: none;
+}
+
+/* ================= DESKTOP NAV (STICKY) ================= */
+.desktopNav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1rem 0;
+  background-color: var(--primary-bg);
+  border-bottom: 1px solid #ffffff;
+}
+
+/* ================= NAV LINKS (Underline Animation) ================= */
+/* Applies to Desktop Nav and Top-Level Mobile SideNav Links (excluding dropdowns) */
+.desktopNav a,
+.sideNav > a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 0.2rem;
+  width: fit-content; /* Critical for mobile to keep line short */
+}
+
+.desktopNav a::after,
+.sideNav > a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold);
+  transform: translateX(-50%);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.desktopNav a:hover::after,
+.desktopNav a.active::after,
+.sideNav > a:hover::after,
+.sideNav > a.active::after {
+  width: 100%;
+}
+
+/* ================= DESKTOP DROPDOWN ================= */
+.dropdown {
+  position: relative;
+  color: #d4af37;
+  font-size: 15.2px;
+}
+
+.dropdown > span {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: var(--primary-bg);
+  padding: 0.5rem 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+}
+
+.dropdownContent a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: var(--gold);
+  text-decoration: none;
+  width: 100%;
+}
+
+.dropdownContent a:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+/* ================= MOBILE OVERLAY ================= */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1001;
+}
+
+/* ================= MOBILE SIDE NAV ================= */
+.sideNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--primary-bg);
+  color: var(--gold);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1002;
+}
+
+.sideNav.open {
+  transform: translateX(0);
+}
+
+/* ================= SIDE NAV DROPDOWN ================= */
+.sideNavItem button {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  position: relative; /* Keep relative for layout but no ::after used here */
+}
+
+.sideNavItem button:hover {
+  color: #ffffff;
+}
+
+.sideDropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem; /* Increased gap to give space for the underline */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-left: 0.8rem;
+  transition: all 0.4s ease;
+}
+
+.sideDropdown.open {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+/* Base styles for dropdown links to support underline */
+.sideDropdown a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+  width: fit-content; /* Ensures underline matches text width */
+  padding-bottom: 2px;
+}
+
+/* The Underline Element */
+.sideDropdown a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold);
+  transform: translateX(-50%);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Action */
+.sideDropdown a:hover::after {
+  width: 100%;
+}
+
+/* ================= UTILS ================= */
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  cursor: pointer;
+  align-self: flex-end;
+  transition: transform 0.3s ease;
+  &:hover { transform: rotate(90deg); }
+}
+
+@media (max-width: 1024px) {
+  .menuToggle { display: block; }
+  .desktopNav { display: none; }
+}
+
+.cartBadge {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: #d4af37;
+  color: black;
+  font-size: 11px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.chevronWrapper {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}

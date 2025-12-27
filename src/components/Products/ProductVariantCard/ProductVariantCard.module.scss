@@ -1,0 +1,149 @@
+// COLORS
+$tan-gold: #e2c079;
+$tan-gold-darker: #c9a35e;
+$light-border: #d4d4d4;
+$dropdown-hover: #f5f5f5;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: sans-serif;
+  width: 100%;
+  position: relative;
+}
+
+/* IMAGE ONLY — NO BACKGROUND */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 10 / 10;
+  border-radius: 4px;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* PRODUCT IMAGE */
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  display: block;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  height: 48px;
+  position: relative;
+  z-index: 20;
+}
+
+.dropdownWrapper {
+  flex: 1;
+  position: relative;
+}
+
+.dropdownBtn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background: white;
+  border: 1px solid $light-border;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 500;
+
+  &:hover {
+    border-color: $tan-gold;
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  bottom: calc(100% + 5px);
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid $light-border;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 4px;
+
+  li {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-bottom: 1px solid #f9f9f9;
+    color: #333;
+
+    &:hover {
+      background: $dropdown-hover;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.cartBtn {
+  width: 60px;
+  background-color: #561211;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $tan-gold-darker;
+  }
+
+  svg {
+    stroke-width: 2px;
+  }
+}
+
+.details {
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 2px;
+    text-transform: uppercase;
+    color: #000;
+    letter-spacing: 0.5px;
+  }
+
+  .price {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #555;
+    margin-bottom: 8px;
+  }
+
+  .purity {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0;
+  }
+}
+.linkWrapper {
+  text-decoration: none;
+  color: inherit;
+}
+.card {
+  cursor: pointer;
+}

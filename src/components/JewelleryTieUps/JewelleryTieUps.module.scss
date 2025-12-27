@@ -1,0 +1,80 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  background-image: url('/images/tie-ups.png');
+  background-size: cover;
+  background-position: center right;
+  display: flex;
+  align-items: center;
+  padding: 4rem 6rem;
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+
+.content {
+  position: relative;
+  max-width: 520px;
+  color: #ffffff;
+  z-index: 1;
+}
+
+
+.content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+
+.content p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero {
+    width: 100%;
+    padding: 3rem 3rem;
+    min-height: 50vh;
+  }
+
+
+  .content h1 {
+    font-size: 2.4rem;
+  }
+}
+
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero {
+    width: 100%;
+    padding: 2.5rem 1.5rem;
+    min-height: 45vh;
+    background-position: center;
+  }
+
+
+  .content {
+    max-width: 100%;
+  }
+
+
+  .content h1 {
+    font-size: 2rem;
+  }
+
+
+  .content p {
+    font-size: 1rem;
+  }
+}

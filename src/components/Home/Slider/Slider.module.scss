@@ -1,0 +1,56 @@
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+
+/* File: `src/components/Slider/Slider.module.scss` */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  opacity: 0.5;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* left and right positions */
+.left {
+  left: 8px;
+}
+
+.right {
+  right: 8px;
+}
+
+/* optional: slightly larger on bigger screens */
+@media (min-width: 640px) {
+  .arrow { width: 40px; height: 40px; font-size: 1.1rem; }
+}
+@media (min-width: 1024px) {
+  .arrow { width: 44px; height: 44px; font-size: 1.2rem; }
+}

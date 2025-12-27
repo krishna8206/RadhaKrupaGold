@@ -1,0 +1,101 @@
+$text-white: #ffffff;
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+.card {
+  text-decoration: none;
+  display: block;
+  border-radius: 16px; // Softer, more modern corners
+  overflow: hidden;
+  position: relative;
+  background: #000; // Base for the image
+  transition: transform 0.6s $ease-out-expo;
+
+  &:hover {
+    transform: scale(0.98); // Premium "press" effect instead of lift
+
+    .image {
+      transform: scale(1.1);
+      filter: saturate(1.1);
+    }
+
+    .cta {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5; // Taller aspect ratio looks more expensive than square
+}
+
+.imageContainer {
+  position: absolute;
+  inset: 0;
+
+  .image {
+    object-fit: cover;
+    transition: transform 1.2s $ease-out-expo, filter 0.6s ease;
+  }
+}
+
+.scrim {
+  position: absolute;
+  inset: 0;
+  // Gradient from transparent top to dark bottom for text contrast
+  background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, 0) 0%,
+                  rgba(0, 0, 0, 0.2) 50%,
+                  rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  color: $text-white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  opacity: 0; // Hidden by default
+  transform: translateY(10px);
+  transition: all 0.4s $ease-out-expo;
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+}
+
+.card:hover .cta svg {
+  transform: translateX(4px);
+}

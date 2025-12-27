@@ -1,0 +1,127 @@
+.wrapper {
+  padding: 40px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden; // Prevents horizontal scroll during animations
+}
+
+.title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.sliderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.viewport {
+  position: relative;
+  width: 100%;
+  // height: auto + relative positioning is the fix for mobile clipping
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.slidePair {
+  display: flex;
+  gap: 30px;
+  // Change to relative on mobile via media query below
+  position: absolute;
+}
+
+.card {
+  position: relative;
+  width: 420px;
+  height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  background: #fff;
+
+  .image {
+    object-fit: cover;
+  }
+}
+
+.navButton {
+  background: #f0f0f0;
+  border: none;
+  width: 40px;
+  height: 37px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  &:hover { background: #e5e5e5; }
+}
+
+.pagination {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dot {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #aaa;
+  transition: all 0.3s;
+
+  &.active {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+  }
+}
+
+/* =====================
+   RESPONSIVE (Mobile Fix)
+===================== */
+
+@media (max-width: 900px) {
+  .card {
+    width: 320px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .viewport {
+    height: auto;
+    min-height: 450px; // Space for two stacked cards
+  }
+
+  .slidePair {
+    position: relative; // Fixes the cutting/clipping issue
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  .card {
+    width: 85vw; // Responsive width
+    height: 53vw; // Maintains aspect ratio
+    max-width: 350px;
+    max-height: 220px;
+  }
+
+  .navButton {
+    display: none; // Often better to hide arrows on mobile and use swipe
+  }
+}

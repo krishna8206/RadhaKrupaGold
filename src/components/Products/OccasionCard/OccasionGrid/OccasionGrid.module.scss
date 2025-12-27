@@ -1,0 +1,21 @@
+.gridContainer {
+  max-width: 1280px;
+  margin: 40px auto;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // Desktop: 4 columns
+  gap: 20px;
+
+  // Tablet Layout: 2 columns
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  // Mobile Layout: 1 column
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}

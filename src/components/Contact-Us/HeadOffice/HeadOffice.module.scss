@@ -1,0 +1,109 @@
+.headOffice {
+  background-color: #561211;
+  padding: 40px 20px;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.textSection {
+  margin-bottom: 30px;
+
+  h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    text-decoration: underline;
+  }
+}
+
+/* =========================
+   ACTIONS GRID
+========================= */
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.actionCard {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 16px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  svg {
+    font-size: 18px;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* =========================
+   TABLET (≤ 822px)
+   Phone + Email in row
+   WhatsApp full width
+========================= */
+
+@media (max-width: 822px) {
+  .actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .actionCard:last-child {
+    grid-column: span 2;
+    justify-content: center;
+  }
+}
+
+/* =========================
+   MOBILE (≤ 437px)
+   All in column
+========================= */
+
+@media (max-width: 437px) {
+  .actions {
+    grid-template-columns: 1fr;
+  }
+
+  .actionCard:last-child {
+    grid-column: span 1;
+  }
+
+  .textSection {
+    h2 {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .actionCard {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+}

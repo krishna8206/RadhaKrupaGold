@@ -1,0 +1,58 @@
+.mapContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .mapTitle {
+    font-family: 'Inter', sans-serif; // Or your preferred font
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #561211;
+  }
+
+  .mapWrapper {
+    width: 100%;
+    //max-width: 1200px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    line-height: 0;
+
+    iframe {
+      border: none;
+      display: block;
+    }
+  }
+}
+
+// Tablet and Mobile Adjustments
+@media (max-width: 1024px) {
+  .mapContainer {
+    .mapWrapper {
+      width: 95%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mapContainer {
+    padding: 2rem 0;
+
+    .mapTitle {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .mapWrapper {
+      width: 100%;
+      border-radius: 0; // Full width feel on mobile
+
+      iframe {
+        height: 350px;
+      }
+    }
+  }
+}

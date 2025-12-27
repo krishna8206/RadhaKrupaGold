@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* ================= COLOR VARIABLES ================= */
+:root {
+    --background: #ffffff;
+    --foreground: #171717;
+    --gold: #D4AF37;
+    --header-bg: #561211;
+    --header-text: var(--gold);
+    --dropdown-bg: #561211;
+    --dropdown-hover-bg: rgba(212, 175, 55, 0.1);
+}
+
+/* ================= THEME PLACEHOLDER ================= */
+@theme inline {
+    /*--color-background: var(--background);*/
+    /*--color-foreground: var(--foreground);*/
+    /*--font-sans: var(--font-geist-sans);*/
+    /*--font-mono: var(--font-geist-mono);*/
+}
+
+/* ================= GLOBAL BODY ================= */
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+/* ================= HEADINGS / LOGO ================= */
+h1, h2, h3, h4, h5, h6, .logo span {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+}
+
+/* ================= LINKS ================= */
+a {
+    color: var(--foreground);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--gold);
+}
+
+/* ================= BUTTONS / ICONS ================= */
+button {
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+button:hover {
+    color: var(--gold);
+}
+
+/* ================= DROPDOWNS ================= */
+.dropdownContent,
+.sideDropdown a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: var(--gold);
+    transition: background 0.2s;
+}
+
+.dropdownContent a:hover,
+.sideDropdown a:hover {
+    background-color: var(--dropdown-hover-bg);
+    border-radius: 4px;
+}
