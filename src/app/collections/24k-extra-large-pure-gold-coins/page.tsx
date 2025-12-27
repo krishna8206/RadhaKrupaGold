@@ -17,8 +17,6 @@ export default function LargeSolidGoldCoinsPage() {
                     {/* Show ALL products (no slice) */}
                     <div className={styles.grid}>
                         {MOCK_PRODUCTS.map((product) => (
-                            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                            // @ts-expect-error
                             <ProductVariantCard key={product.id} data={product} />
                         ))}
                     </div>
